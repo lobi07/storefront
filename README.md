@@ -15,3 +15,5 @@ Le template se compose de trois écrans: une page de liste de catégories, une p
 
 #### Page du panier:
 ![](./screens/desktop/cart.png)
+
+Pour que le scss marche , il faut avoir le hugo -extended
