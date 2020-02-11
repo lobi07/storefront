@@ -1,70 +1,165 @@
+@import "mixins/responsive.scss";
+
 body {
   padding-left: 5em;
   padding-right: 5em;
-  .wrapper-image-home{
-    position: relative;
-    .image-home {
-      display: flex;
-      justify-content: center;
-      align-content: center;
-      
-      img {
-        width: 100%;
-        height: 100%;
-      }
-      .rect-dark-text {
-        position: absolute;
-        background-color: #393935;
-        width: 50%;
-        height: 100%;
-        border-left: 1em solid white;
-        border-right: 1em solid white;
-        
-      }
-      .description-home{
-        position: absolute;
-        width: 50%;
-        color: white;
-        padding-left: 5em;
-        padding-right: 5em;
-        text-align: center;
-        align-self: center;
-        .title-description-home{
-          font-size: 5em;
-          font-family: Georgia, 'Times New Roman', Times, serif ;
-          border-bottom: 1px solid white;
-          padding-bottom: 10px;
-          line-height: 48px;
-        }
-        .text-description-home{
 
-        }
-      }
-    }
+  @include phone {
+    padding-left: 0;
+    padding-right: 0;
   }
-  
+}
+// Navigation bar
+
+.wrapper-title {
+  position: absolute;
+  width: 100%;
+  @include phone {
+    display: flex;
+    justify-content: center;
+  }
 }
 
-#navbarMenu {
+.navbar-toggler {
+  z-index: 1;
+}
+
+.navbarMenu {
   justify-content: center;
   text-transform: uppercase;
   font-weight: 700;
   color: rgb(71, 71, 71);
+
   .item-menu {
     color: rgb(71, 71, 71);
   }
+}
 
-  .caddie-wrapper {
-    position: absolute !important;
-    right: 1em;
-    .caddie {
-      text-decoration: none;
+.caddie-wrapper {
+  position: absolute !important;
+  right: 1em;
+  .caddie {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: inherit;
+  }
+}
+
+//Headband image home
+.wrapper-image-home {
+  position: relative;
+  .image-home {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+    .rect-dark-text {
+      display: inline-flex;
+      position: absolute;
+      background-color: #393935;
+      width: 50%;
+      height: 100%;
+      border-left: 1em solid white;
+      border-right: 1em solid white;
+
+      @include phone {
+        width: 70%;
+      }
+    }
+    .description-home {
+      color: white;
+      padding-left: 2em;
+      padding-right: 2em;
+      text-align: center;
+      align-self: center;
+      @include phone {
+        padding-left: 1em;
+        padding-right: 1em;
+        max-height: 10em;
+        font-size: 12px;
+      }
+      .title-description-home {
+        font-size: 5em;
+        font-family: Georgia, "Times New Roman", Times, serif;
+        border-bottom: 0.01em solid white;
+        width: max-content;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 0.2em;
+        padding-bottom: 0.1em;
+
+        @include phone {
+          border-bottom: none;
+          font-size: 20px;
+        }
+      }
+      .text-description-home {
+        @include phone {
+        }
+      }
+    }
+  }
+}
+
+//Grid card elements home
+.section {
+  margin-top: 5em;
+
+  .card {
+    border: none;
+    text-align: center;
+    color: initial;
+    opacity: 1;
+    justify-content: center;
+    display: flex;
+
+    &:hover{
+      opacity: 0.6;
+    }
+    @include phone{
+       width: 15em;
+    }
+    h10 {
+      color: #8b8b96;
+    }
+    h5 {
       text-transform: uppercase;
-      color: inherit;
+    }
+    p {
+      font-family: Georgia, "Times New Roman", Times, serif;
+      color: #9fa3b4;
     }
   }
 
-  .wrapper-title {
+  .card-mask{
+    display: flex;
+    flex-direction: column;
     position: absolute;
+    align-items: center;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    .button-card-detail,
+    .button-card-add{
+      padding-top: 1em;
+      margin-top: 3em;
+      align-items: center;
+      width: 10em;
+      height: 3em;
+      color: white;
+      text-transform: uppercase;
+      background-color: black;
+      &:hover{
+        cursor: pointer;
+      }
+    }
+  }
+
+  .toshow{
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.103);
   }
 }
