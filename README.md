@@ -11,6 +11,7 @@ git clone https://github.com/lobi07/storefront.git
 Installer hugo : 
   - MacOS : brew install hugo
   - Windows : choco install hugo-extended -confirm
+  
 Installer sass : 
   - MacOS : brew install sass/sass/sass
   - Windows : choco install sass
