@@ -1,47 +1,42 @@
 @import "mixins/responsive.scss";
 
 body {
-  padding-left: 5em;
-  padding-right: 5em;
-
   @include phone {
-    padding-left: 0;
-    padding-right: 0;
   }
 }
+
 // Navigation bar
+.navigation-bar {
+  border-bottom: 1px solid #ebebeb;
+  margin-bottom: 1em;
+  display: flex;
 
-.wrapper-title {
-  position: absolute;
-  width: 100%;
-  @include phone {
-    display: flex;
+  .wrapper-title {
+    @include phone {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  .navbarMenu {
     justify-content: center;
-  }
-}
-
-.navbar-toggler {
-  z-index: 1;
-}
-
-.navbarMenu {
-  justify-content: center;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: rgb(71, 71, 71);
-
-  .item-menu {
-    color: rgb(71, 71, 71);
-  }
-}
-
-.caddie-wrapper {
-  position: absolute !important;
-  right: 1em;
-  .caddie {
-    text-decoration: none;
     text-transform: uppercase;
-    color: inherit;
+    font-weight: 700;
+    .nav-link {
+      color: #000000c4 !important;
+    }
+  }
+
+  .caddie-wrapper {
+    position: absolute !important;
+    right: 1em;
+    font-weight: 700;
+
+    .caddie {
+      text-decoration: none;
+      text-transform: uppercase;
+      color: inherit;
+    }
   }
 }
 
@@ -116,11 +111,11 @@ body {
     justify-content: center;
     display: flex;
 
-    &:hover{
+    &:hover {
       opacity: 0.6;
     }
-    @include phone{
-       width: 15em;
+    @include phone {
+      width: 15em;
     }
     h10 {
       color: #8b8b96;
@@ -134,7 +129,7 @@ body {
     }
   }
 
-  .card-mask{
+  .card-mask {
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -143,7 +138,7 @@ body {
     width: 100%;
     height: 100%;
     .button-card-detail,
-    .button-card-add{
+    .button-card-add {
       padding-top: 1em;
       margin-top: 3em;
       align-items: center;
@@ -152,14 +147,114 @@ body {
       color: white;
       text-transform: uppercase;
       background-color: black;
-      &:hover{
+      &:hover {
         cursor: pointer;
       }
     }
   }
 
-  .toshow{
+  .toshow {
     opacity: 1;
     background-color: rgba(0, 0, 0, 0.103);
+  }
+}
+
+// Breadcrump
+.breadcrump-top {
+  display: flex;
+  justify-content: center;
+  text-transform: uppercase;
+  margin-bottom: 2em;
+  ol {
+    background-color: white !important;
+    font-weight: 700;
+    a {
+      color: inherit;
+    }
+    .active {
+      color: #aca6b2;
+    }
+  }
+}
+
+// Details page
+.container-details {
+  max-width: 1500px !important;
+  .content-page {
+    display: flex;
+    img {
+      width: 55em;
+    }
+    .content-text-and-counter {
+      display: flex;
+      text-align: center;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      .text {
+        height: 0;
+        width: 25em;
+        margin-bottom: 5em;
+
+        .text-kiriko {
+          color: #b8c1cf;
+        }
+        .text-title {
+          font-family: Georgia, "Times New Roman", Times, serif;
+        }
+
+        .text-price {
+          font-family: Georgia, "Times New Roman", Times, serif;
+          color: #dadada;
+          font-weight: 600;
+        }
+        .text-description {
+          color: #9fa4ae;
+          font-weight: 600;
+        }
+      }
+
+      .counter {
+        display: flex;
+        height: fit-content;
+        .counter-wrapper {
+          width: 7em;
+          .counter-square {
+            display: flex;
+            margin-right: 0.5em;
+
+            .counter-content {
+              width: 100%;
+              text-align: center;
+              background-color: #eeeeee;
+            }
+            .wrapper-buttons {
+              .counter-plus,
+              .counter-minus {
+                background-color: #dadada;
+                border-radius: 0;
+                width: 100%;
+                height: 100%;
+              }
+            }
+          }
+        }
+
+        .counter-wrapper-button-add {
+          display: flex;
+          border-radius: 0;
+          background-color: #1d1d20;
+          width: 10em;
+          justify-content: center;
+
+          .button-add {
+            color: white;
+            text-transform: uppercase;
+            font-size: 0.8em;
+            font-weight: 400;
+          }
+        }
+      }
+    }
   }
 }
